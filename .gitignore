@@ -1,0 +1,7 @@
+/local
+/*.box
+/*.log
+/vagrant_config.yml
+/.vagrant
+*.retry
+/.vagrant_config-overrides.yml
