@@ -9,9 +9,9 @@ def load_glue()
     [[$ABSDIR, $COPS_DIR], [$ABSDIR, $ABSDIR]].each do |cwd, cops_path|
         v = "#{cops_path}/hacking/vagrant/Vagrantfile_common.rb"
         if File.exists? v
-          vagrant_common = v
-          require vagrant_common
-          return cops_dance({:cwd => cwd, :cops_path => cops_path})
+            vagrant_common = v
+            require vagrant_common
+            return cops_dance({:cwd => cwd, :cops_path => cops_path})
         end
     end
     raise "Corpusops.bootstrap vagrantfile not found"
@@ -28,8 +28,8 @@ ansible_vars = {
 cfg = cops_inject_playbooks \
     :cfg => cfg,
     :playbooks => [
-            # install docker
-            {"playbooks/vbox_install_docker.yml" => ansible_vars}
+        # install docker
+        {"playbooks/vbox_install_docker.yml" => ansible_vars}
     ]
 
 # install rancher server only on first box
@@ -46,4 +46,4 @@ cfg = cops_inject_playbooks \
 #    :machine_num => cfg['MACHINE_NUM']
 
 debug cfg.to_yaml
-# vim: set ft=ruby ts=2 et sts=2 tw=0 ai:
+# vim: set ft=ruby ts=4 et sts=4 tw=0 ai:
