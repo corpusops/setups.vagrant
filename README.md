@@ -31,7 +31,7 @@
 - After that, launch the vm
 
     ```sh
-    ./Vagrant_manage up
+    ./vm_manage up
     ```
 
 - You can of your clone/adapt this repo to configure in details your local cluster
