@@ -29,7 +29,7 @@ cfg = cops_inject_playbooks \
     :cfg => cfg,
     :playbooks => [
         # install docker
-        {"playbooks/vbox_install_docker.yml" => ansible_vars}
+        {"playbooks/vbox_install_docker.yml" => ansible_vars},
     ]
 
 # install rancher server only on first box
