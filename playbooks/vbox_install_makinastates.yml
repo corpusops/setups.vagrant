@@ -1,0 +1,29 @@
+---
+- import_playbook: ./vbox_load_vars.yml
+- import_playbook: ./sudo.yml
+- hosts: all
+  pre_tasks:
+    - shell: |
+        set -ex
+        test -e /srv/makina-states/.git
+      failed_when: false
+      changed_when: false
+      register: cops_makinastates_test1
+      no_log: true
+    - shell: |
+        set -ex
+        test -e /srv/makina-states/venv/bin/ansible
+        test -e /srv/makina-states/venv/bin/salt-call
+        false
+      register: cops_makinastates_test2
+      changed_when: false
+      failed_when: false
+      no_log: true
+  roles:
+    - role: corpusops.roles/localsettings_makinastates
+      when: >-
+        ((not vbox_cops.get('SKIP_INSTALL_MAKINASTATES', False)) and
+         ((cops_makinastates_test2.rc !=0) or
+          (cops_makinastates_test1.rc !=0)) or
+         (vbox_cops.get('FORCE_INSTALL_MAKINASTATES', False)))
+
