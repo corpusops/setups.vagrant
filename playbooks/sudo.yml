@@ -1,4 +1,8 @@
 ---
 - hosts: all
+  post_tasks:
+  - include_vars: ./variables/sudo.yml
+  pre_tasks:
+  - include_vars: ./variables/sudo.yml
   tasks:
   - include_vars: ./variables/sudo.yml
