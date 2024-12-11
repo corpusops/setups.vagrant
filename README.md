@@ -1,6 +1,6 @@
 # Vagrant setup for corpusops
 
-**NO LONGER MAINTAINED / NO RELEASE SECURITY FIXES**
+**NO LONGER MAINTAINED / ABANDONED**
 
 ## Vagrant setup for test VMs
 - We provide a setup to deploy VMS and provision with [corpusops](https://github.com/corpusops/corpusops.bootstrap.git)
