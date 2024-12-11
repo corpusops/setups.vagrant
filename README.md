@@ -1,5 +1,7 @@
 # Vagrant setup for corpusops
 
+** NO LONGER MAINTAINED / NO RELEASE SECURITY FIXES **
+
 ## Vagrant setup for test VMs
 - We provide a setup to deploy VMS and provision with [corpusops](https://github.com/corpusops/corpusops.bootstrap.git)
 - The first thing you need is a ``setups.vagrant`` copy (one per ``local cluster``)
